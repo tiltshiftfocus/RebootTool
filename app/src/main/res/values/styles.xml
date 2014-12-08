@@ -1,0 +1,15 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppTheme" parent="AppDarkTheme.Base"></style>
+
+    <style name="AppDarkTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor_Dark</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark_Dark</item>
+        <item name="colorAccent">@color/accentColor_Dark</item>
+    </style>
+
+</resources>
