@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Reboot Tool</string>
-    <string name="version">1.4</string>
+    <string name="version">version</string>
     <string name="action_settings">Settings</string>
     <string name="reboot">Reboot</string>
     <string name="reboot_recovery">Reboot Recovery</string>
@@ -12,12 +12,16 @@
     <string name="text1">Choose an option:</string>
     <string name="hinttext">killall system_server</string>
     <string name="shutdown">Power Off</string>
-    
     <string name="advanced">Advanced</string>
     <string name="prompt">Prompt</string>
     <string name="aboutapp">About</string>
-    
     <string name="aboutme">By Jerry Lim</string>
     <string name="myemail">limzming@gmail.com</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="advanced_hint">Shows an input to send terminal commands</string>
+    <string name="prompt_hint">Prompt before performing actions</string>
 
 </resources>

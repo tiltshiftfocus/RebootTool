@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor_Dark">#3f51b5</color>
-    <color name="primaryColorDark_Dark">#283593</color>
-    <color name="accentColor_Dark">#A2D3C2</color>
+    <color name="darkTheme_toolbar">#3f51b5</color>
+    <color name="darkTheme_statusbar">#283593</color>
+    <color name="darkTheme_accent">#A2D3C2</color>
+
+    <color name="lightTheme_toolbar">#8bc34a</color>
+    <color name="lightTheme_statusbar">#33691e</color>
+    <color name="lightTheme_accent">#3A5743</color>
+
 
 
 </resources>

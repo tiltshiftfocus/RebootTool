@@ -5,29 +5,28 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 //import android.widget.EditText;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 public class RebootCommands {
 	
 	private Context context;
 	private RunAsRoot run1;
-	private String PACKAGE_NAME;
+    private SharedPreferences pref;
 	
 	
-	public RebootCommands(Context context, String PACKAGE_NAME){
+	public RebootCommands(Context context){
 		this.context = context;
 		run1 = new RunAsRoot();
-		this.PACKAGE_NAME = PACKAGE_NAME;
+        pref = PreferenceManager.getDefaultSharedPreferences(context);
 	}
 	
 	public void sendCommand(final String command){
 
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-
 		if(command.isEmpty()){
 			Toast.makeText(context, "Enter a command!", Toast.LENGTH_SHORT).show();
 		}else{
-			if(pref.getBoolean("prompt", false)==true){
+			if(pref.getBoolean("pref_prompt", false)==true){
 				AlertDialog.Builder builder = new AlertDialog.Builder(context);
 				builder.setMessage("Are you sure you want to send command: " + command + "?")
 				.setCancelable(false)
@@ -54,9 +53,8 @@ public class RebootCommands {
 
 	}
 
-	public void hotReboot(final String[] commands){	
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-		if(pref.getBoolean("prompt", false)==true){
+	public void hotReboot(final String[] commands){
+		if(pref.getBoolean("pref_prompt", false)==true){
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("Are you sure you want to hot reboot?")
@@ -81,8 +79,7 @@ public class RebootCommands {
 	}
 
 	public void reboot(final String[] commands){
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-		if(pref.getBoolean("prompt", false)==true){
+		if(pref.getBoolean("pref_prompt", false)==true){
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("Are you sure you want to reboot?")
@@ -107,8 +104,7 @@ public class RebootCommands {
 	}
 
 	public void rebootBootLoader(final String[] commands){
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-		if(pref.getBoolean("prompt", false)==true){
+		if(pref.getBoolean("pref_prompt", false)==true){
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("Are you sure you want to reboot to bootloader?")
@@ -133,8 +129,7 @@ public class RebootCommands {
 	}
 
 	public void rebootRecovery(final String[] commands){
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-		if(pref.getBoolean("prompt", false)==true){
+		if(pref.getBoolean("pref_prompt", false)==true){
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("Are you sure you want to reboot to recovery?")
@@ -159,8 +154,7 @@ public class RebootCommands {
 	}
 
 	public void shutdownPhone(final String[] commands){
-		SharedPreferences pref = context.getSharedPreferences(PACKAGE_NAME, Context.MODE_PRIVATE);
-		if(pref.getBoolean("prompt", false)==true){
+		if(pref.getBoolean("pref_prompt", false)==true){
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
 			builder.setMessage("Are you sure you want to shutdown?")
